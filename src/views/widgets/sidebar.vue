@@ -68,35 +68,35 @@
     export default {
         data() {
             return {
-                report: ['Vehicle', 'Driver', 'Report Trip', 'Report', 'Upload Case', 'Summary', 'Upload Assset', 'Change History', 'Daily Report', 'Working Hour',],
-                assignments: ['Manage', 'Forklift Control', 'Fleet Control',],
+                report: ['Vehicle', 'Driver', 'Report Trip', 'Report', 'Upload Case', 'Summary', 'Upload Assset', 'Change History', 'Daily Report', 'Working Hour'],
+                assignments: ['Manage', 'Forklift Control', 'Fleet Control'],
                 masterdata: ['User', 'Vehicle', 'Driver', 'Group', 'Notification', 'Pool', 'Customer Point', 'Assets'],
-                maintanance: ['Major Maintanance', 'Minor Maintanance', 'Maintanance Report', 'List',],
-                widgetsetting: ['iFrame', 'Widget COnfiguration',],
+                maintanance: ['Major Maintanance', 'Minor Maintanance', 'Maintanance Report', 'List'],
+                widgetsetting: ['iFrame', 'Widget COnfiguration'],
                 selected: [],
                 allSelected: false,
-                indeterminate: false
-            }
+                indeterminate: false,
+            };
         },
         methods: {
             toggleAll(checked) {
-                this.selected = checked ? this.flavours.slice() : []
-            }
+                this.selected = checked ? this.flavours.slice() : [];
+            },
         },
         watch: {
             selected(newVal, oldVal) {
                 // Handle changes in individual flavour checkboxes
                 if (newVal.length === 0) {
-                    this.indeterminate = false
-                    this.allSelected = false
+                    this.indeterminate = false;
+                    this.allSelected = false;
                 } else if (newVal.length === this.flavours.length) {
-                    this.indeterminate = false
-                    this.allSelected = true
+                    this.indeterminate = false;
+                    this.allSelected = true;
                 } else {
-                    this.indeterminate = true
-                    this.allSelected = false
+                    this.indeterminate = true;
+                    this.allSelected = false;
                 }
-            }
-        }
-    }
+            },
+        },
+    };
 </script>

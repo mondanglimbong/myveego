@@ -8,10 +8,10 @@
     <div text="center">
       <a id="show-btn" @click="showModal">
         <mdb-datatable
-        :data="data"
-        striped
-        bordered
-      />
+          :data="data"
+          striped
+          bordered
+        />
       </a>
       <b-modal ref="my-modal" hide-footer title="Position">
         <div class="d-block text-center">
@@ -33,7 +33,7 @@
     export default {
         name: 'DatatablePage',
         components: {
-            mdbDatatable
+            mdbDatatable,
         },
         data() {
             return {
@@ -42,28 +42,28 @@
                         {
                             label: 'Image',
                             field: 'image',
-                            sort: 'asc'
+                            sort: 'asc',
                         },
                         {
                             label: 'Details',
                             field: 'details',
-                            sort: 'asc'
-                        }
+                            sort: 'asc',
+                        },
                     ],
                     rows: [
                         {
                             image: 'Tiger Nixon',
-                            details: 'System Architect'
+                            details: 'System Architect',
                         },
                         {
                             image: 'Garrett Winters',
-                            details: 'Accountant'
-                        }
-                    ]
-                }
-            }
-        }
-    }
+                            details: 'Accountant',
+                        },
+                    ],
+                },
+            };
+        },
+    };
 </script>
 <!--<template>-->
 <!--  <b-card-->

@@ -12,11 +12,13 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbvue/build/css/mdb.css';
+import vuetify from '@/plugins/vuetify'
 
 Vue.use(VueAxios,axios)
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue)
 new Vue({
+  vuetify,
   router,
   store,
   render: (h) => h(App),

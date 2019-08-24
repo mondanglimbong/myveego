@@ -6,7 +6,7 @@
       <h4 class="widget-title">On Trip</h4>
     </div>
     <div class="text-center">
-      <a id="show-btn" @click="showModal"><h1 style="color:#f86c6b"><b>68</b></h1></h1></a>
+      <a id="show-btn" @click="showModal"><h1 style="color:#f86c6b"><b>68</b></h1></a>
       <b-modal ref="my-modal" hide-footer title="On Trip">
         <div class="d-block text-center">
 
@@ -23,8 +23,8 @@
   </b-card>
 </template>
 <script>
-    import { shuffleArray } from '../../shared/utils'
-    import cTable from '../base/Table.vue'
+    import { shuffleArray } from '../../shared/utils';
+    import cTable from '../base/Table.vue';
 
     const someData = () => shuffleArray([
         {image: 'Samppa Nori', details: '2012/01/01'},
@@ -34,7 +34,7 @@
         {image: 'Samppa Nori', details: '2012/01/01'},
         {image: 'Samppa Nori', details: '2012/01/01'},
         {image: 'Samppa Nori', details: '2012/01/01'}
-        ,    ])
+        ,    ]);
     export default {
         name: 'tables',
         components: {cTable},
@@ -44,19 +44,18 @@
                 itemsArray: someData(),
                 fields: [
                     {key: 'image', label: 'User', sortable: true},
-                    {key: 'details'}
+                    {key: 'details'},
                 ],
-            }
+            };
         },
         methods: {
             showModal() {
-                this.$refs['my-modal'].show()
+                this.$refs['my-modal'].show();
             },
 
             hideModal() {
-                this.$refs['my-modal'].hide()
+                this.$refs['my-modal'].hide();
             },
-
-        }
-    }
+        },
+    };
 </script>

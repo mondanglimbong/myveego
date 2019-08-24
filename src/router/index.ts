@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import {componentFactory} from "vue-class-component/lib/component";
 
 Vue.use(Router)
 // Containers
@@ -7,10 +8,10 @@ const DefaultContainer = () => import('../containers/DefaultContainer.vue')
 
 // Views
 const Dashboard = () => import('../views/DashboardPage.vue')
-
+const DashboardPage =() => import('../views/DashboardPage.vue')
 // Grid Responsive
-const Setting = () => import('@/views/users/Setting.vue')
-
+// const Setting = () => import('@/views/Setting/Setting.vue')
+const Setting = () => import('../views/Setting/Setting.vue')
 //Crud
 const Users = () => import('@/views/Crud/Users.vue')
 const Driver = () => import('@/views/Crud/Driver.vue')
@@ -30,59 +31,56 @@ const ConfigWidget = () => import('@/views/widgets/ConfigWidget.vue')
 
 //Login
 const Page404 = () => import('@/views/pages/Page404.vue')
-const Page500 = () => import('@/views/pages/Page500.vue')
 const Login = () => import('@/views/pages/Login.vue')
-const Register = () => import('@/views/pages/Register.vue')
 
 export default new Router({
   mode: 'hash',
   linkActiveClass: 'open active',
   routes: [
     {
-      path: '/',
-      redirect: '/dashboard',
+      path: '/dashboard',
       name: 'Home',
       component: DefaultContainer,
       children: [
         {
-          path: 'dashboard',
+          path: '/dashboard',
           name: 'Dashboard',
           component: Dashboard
         },
         {
-          path: 'setting',
+          path: '/setting',
           name: 'Setting',
           component: Setting
         },
         {
-          path: 'users',
+          path: '/users',
           name: 'User',
           component: Users
         },
         {
-          path: 'driver',
+          path: '/driver',
           name: 'Driver',
           component: Driver
         },
         {
-          path: 'vehicle',
+          path: '/vehicle',
           name: 'Vehicle',
           component: Vehicle
         },
         ,
         {
-          path: 'driverreport',
+          path: '/driverreport',
           name: 'Driver Report',
           component: DriverReport
         },
         ,
         {
-          path: 'driveranalytics',
+          path: '/driveranalytics',
           name: 'Driver Analytics',
           component: DriverAnalytics
         },
         {
-          path: 'vehiclereport',
+          path: '/vehiclereport',
           name: 'Vehicle Report',
           component: VehicleReport
         },
@@ -92,21 +90,21 @@ export default new Router({
           component: VehicleDetails
         },
         {
-          path: 'coba',
+          path: '/coba',
           name: 'coba',
           component: Coba
         },
         {
-          path: 'configwidget',
+          path: '/configwidget',
           name: 'Configuration Widget',
           component: ConfigWidget
         }
       ]
     },
     {
-      path: '/pages',
-      redirect: '/pages/404',
-      name: 'Pages',
+      path: '/',
+      redirect: '/login',
+      name: 'Login',
       component: {
         render (c) { return c('router-view') }
       },
@@ -117,20 +115,11 @@ export default new Router({
           component: Page404
         },
         {
-          path: '500',
-          name: 'Page500',
-          component: Page500
-        },
-        {
           path: 'login',
           name: 'Login',
           component: Login
         },
-        {
-          path: 'register',
-          name: 'Register',
-          component: Register
-        }
+
       ]
     }
   ]

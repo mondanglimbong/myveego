@@ -24,14 +24,16 @@
 <script>
     export default {
 
-    methods: {
-        showModal() {
-            this.$refs['my-modal'].show()
-        },
+        methods: {
+            showModal() {
+                this.$refs['my-modal'].show();
+            },
 
-        hideModal() {
-            this.$refs['my-modal'].hide()
-        },
-
+            hideModal() {
+                this.$refs['my-modal'].hide();
+            },
+        }
+        ,
     }
-}</script>
+    ;
+</script>

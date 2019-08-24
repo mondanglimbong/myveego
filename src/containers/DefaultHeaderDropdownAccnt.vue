@@ -12,17 +12,17 @@
       <b-dropdown-item to="/setting"><i class="fa fa-wrench" /> Settings</b-dropdown-item>
       <b-dropdown-item><i class="icon-info icons" />Help</b-dropdown-item>
       <b-dropdown-divider />
-      <b-dropdown-item to="/pages/login" ><i class="fa fa-lock" /> Logout</b-dropdown-item>
+      <b-dropdown-item to="/login" ><i class="fa fa-lock" /> Logout</b-dropdown-item>
     </template>
   </AppHeaderDropdown>
 </template>
 
 <script>
-import { HeaderDropdown as AppHeaderDropdown } from '@coreui/vue'
-export default {
-  name: 'DefaultHeaderDropdownAccnt',
-  components: {
-    AppHeaderDropdown
-  },
-}
+    import { HeaderDropdown as AppHeaderDropdown } from '@coreui/vue'
+    export default {
+        name: 'DefaultHeaderDropdownAccnt',
+        components: {
+            AppHeaderDropdown
+        },
+    }
 </script>

@@ -178,26 +178,6 @@ export default {
           url: '/ConfigWidget',
           icon: 'icon-wrench'
         },
-        {
-          name: 'Login',
-          url: '/pages/login',
-          icon: 'icon-wrench'
-        },
-        {
-          name: 'Register',
-          url: '/pages/register',
-          icon: 'icon-wrench'
-        },
-        {
-          name: 'Error 404',
-          url: '/pages/404',
-          icon: 'icon-wrench'
-        },
-        {
-          name: 'Error 500',
-          url: '/pages/500',
-          icon: 'icon-wrench'
-        }
       ]
     },
   ]

@@ -60,44 +60,52 @@
         ></b-form-checkbox-group>
       </div>
     </div>
-
   </div>
 </template>
 <script>
     export default {
         data() {
             return {
-                fleet: ['Vehicle Total', 'Vehicle Move', 'GPS Status', 'Vehicle Idle', 'Map Panel', 'Meter Readings', 'Hour Reading', 'Service Reminders', 'Vehicle List', 'Driver License', 'Vehicle Status', 'On Customer Point', 'Battery Status', 'Eskavator Status', 'OB Dumptruck Status', 'Coaltruck Status', 'Productivity OB Rank', 'Productivity Coaltruck Rank',],
-                assets: ['Assets List', 'Assets Map', 'Assets Total', 'Assets Status',],
-                cctv: ['CCTV Show 1', 'CCTV Maps', 'CCTV Total', 'CCTV Online Total', 'CCTV Show 2', 'CCTV Show 3', 'CCTV Show 4', 'Change Trend', 'Device History', 'Device Status', 'CCTV List', 'CCTV Status', 'CCTV Delay',],
-                fujixerox: ['Cartride Status', 'Drum Status', 'Meter Heat Map', 'Assets List', 'Maps', 'Device Status', 'Assets Total', 'Assets Total', 'Device Type', 'Weste Toner Status', 'Device Performance',],
-                atm: ['Event Statistics', 'ATM List', 'ATM Maps', 'ATM Status', 'ATM Total', 'ATM Downtime',],
+                fleet: ['Vehicle Total', 'Vehicle Move', 'GPS Status', 'Vehicle Idle', 'Map Panel', 'Meter Readings','Hour Reading', 'Service Reminders', 'Vehicle List', 'Driver License', 'Vehicle Status', 'On Customer Point', 'Battery Status', 'Eskavator Status', 'OB Dumptruck Status', 'Coaltruck Status', 'Productivity OB Rank', 'Productivity Coaltruck Rank'],
+
+                assets: ['Assets List', 'Assets Map', 'Assets Total', 'Assets Status'],
+
+                cctv: ['CCTV Show 1', 'CCTV Maps', 'CCTV Total', 'CCTV Online Total', 'CCTV Show 2', 'CCTV Show 3', 'CCTV Show 4', 'Change Trend', 'Device History', 'Device Status', 'CCTV List', 'CCTV Status', 'CCTV Delay'],
+
+                fujixerox: ['Cartride Status', 'Drum Status', 'Meter Heat Map', 'Assets List', 'Maps', 'Device Status', 'Assets Total', 'Assets Total', 'Device Type', 'Weste Toner Status', 'Device Performance'],
+
+                atm: ['Event Statistics', 'ATM List', 'ATM Maps', 'ATM Status', 'ATM Total', 'ATM Downtime'],
+
                 selected: [],
                 allSelected: false,
-                indeterminate: false
+                indeterminate: false,
             }
+                ;
         },
         methods: {
             toggleAll(checked) {
-                this.selected = checked ? this.flavours.slice() : []
-            }
+                this.selected = checked ? this.flavours.slice() : [];
+            },
         },
         watch: {
             selected(newVal, oldVal) {
                 // Handle changes in individual flavour checkboxes
                 if (newVal.length === 0) {
-                    this.indeterminate = false
-                    this.allSelected = false
+                    this.indeterminate = false;
+                    this.allSelected = false;
                 } else if (newVal.length === this.flavours.length) {
-                    this.indeterminate = false
-                    this.allSelected = true
+                    this.indeterminate = false;
+                    this.allSelected = true;
                 } else {
-                    this.indeterminate = true
-                    this.allSelected = false
+                    this.indeterminate = true;
+                    this.allSelected = false;
                 }
             }
+            ,
         }
+        ,
     }
+    ;
 </script>
 <style>
   #form {

@@ -18,9 +18,7 @@
           <form @submit.prevent="add">
             <hr>
             <b-container fluid>
-
             </b-container>
-
           </form>
         </div>
       </b-modal>
@@ -30,47 +28,43 @@
 <script>
     export default {
         name: 'progress-bars',
-        data () {
-            return {
-                counter: 45,
-                max: 0,
-                max2: 10,
-                value: 33.333333333,
-                value3: 75,
-                timer: null,
-                striped: true,
-                animate: true,
-                max3: 100,
-                values: [ 15, 30, 20 ]
-            }
+        data () {return {
+            counter: 45,
+            max: 0,
+            max2: 10,
+            value: 33.333333333,
+            value3: 75,
+            timer: null,
+            striped: true,
+            animate: true,
+            max3: 100,
+            values: [ 15, 30, 20 ],
+        };
         },
         methods: {
-            clicked () {
-                this.counter = Math.random() * this.max
+            clicked () {this.counter = Math.random() * this.max;
                 console.log('Change progress to ' +
-                    Math.round(this.counter * 100) / 100)
+                    Math.round(this.counter * 100) / 100);
             },
             setClock() {
                 this.timer = setInterval(() => {
                     this.bars.forEach(bar => {
-                        bar.value = 25 + (Math.random() * 75)
-                    })
-                }, 2000)
+                        bar.value = 25 + (Math.random() * 75);
+                    });
+                }, 2000);
             },
             showModal() {
-                this.$refs['my-modal'].show()
+                this.$refs['my-modal'].show();
             },
 
             hideModal() {
-                this.$refs['my-modal'].hide()
-            }
+                this.$refs['my-modal'].hide();
+            },
         },
-        mounted () {
-            this.setClock()
+        mounted () {this.setClock();
         },
-        beforeDestroy () {
-            clearInterval(this.timer)
-            this.timer = null
-        }
-    }
+        beforeDestroy () {clearInterval(this.timer);
+            this.timer = null;
+        },
+    };
 </script>
