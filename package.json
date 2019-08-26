@@ -57,6 +57,7 @@
   "main": "./dist/vue-responsive-grid-layout.common.js",
   "unpkg": "./dist/vue-responsive-grid-layout.umd.min.js",
   "devDependencies": {
+    "@mdi/font": "^4.1.95",
     "@vue/cli-plugin-babel": "^3.4.1",
     "@vue/cli-plugin-typescript": "^3.4.1",
     "@vue/cli-service": "^3.4.1",

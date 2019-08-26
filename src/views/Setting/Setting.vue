@@ -97,7 +97,7 @@
           :maxRows="props.maxRows"
         >
           <div>
-            <vehicleon-trip></vehicleon-trip>
+            <vehicle-gps-status></vehicle-gps-status>
           </div>
         </VueGridItem>
       </template>
@@ -131,7 +131,7 @@
           :maxRows="props.maxRows"
         >
           <div>
-            <vehicleon-trip></vehicleon-trip>
+            <vehicle-move></vehicle-move>
           </div>
         </VueGridItem>
       </template>
@@ -165,7 +165,7 @@
           :maxRows="props.maxRows"
         >
           <div>
-            <vehicleon-trip></vehicleon-trip>
+            <vehicle-idle></vehicle-idle>
           </div>
         </VueGridItem>
       </template>
@@ -199,7 +199,7 @@
           :maxRows="props.maxRows"
         >
           <div>
-            <vehicleon-trip></vehicleon-trip>
+            <vehicle-position></vehicle-position>
           </div>
         </VueGridItem>
       </template>
@@ -233,7 +233,7 @@
           :maxRows="props.maxRows"
         >
           <div>
-            <vehicleon-trip></vehicleon-trip>
+            <vehicle-map></vehicle-map>
           </div>
         </VueGridItem>
       </template>
@@ -267,7 +267,7 @@
           :maxRows="props.maxRows"
         >
           <div>
-            <vehicleon-trip></vehicleon-trip>
+            <vehicle-list></vehicle-list>
           </div>
         </VueGridItem>
       </template>
@@ -895,9 +895,14 @@
     import {namespace} from 'vuex-class';
     import {Breakpoint, ResponsiveLayout} from '@/lib/responsiveUtils';
     import {Layout} from '@/lib/utils';
-    import VehicleList from '../widgets/vehiclelist.vue';
-    import VehicleonTrip from '../widgets/vehicle_on_trip.vue';
+    import VehicleIdle from '../widgets/vehicle_idle.vue';
     import VehicleTotal from '../widgets/vehicletotal.vue';
+    import VehicleMove from '../widgets/vehiclemove.vue';
+    import VehicleonTrip from '../widgets/vehicle_on_trip.vue';
+    import VehiclePosition from '../widgets/vehicle_position.vue';
+    import VehicleGpsStatus from '../widgets/vehicle_gps_status.vue';
+    import VehicleList from '../widgets/vehiclelist.vue';
+    import VehicleMap from '../widgets/vehicle_map.vue';
 
     const layoutModule = namespace('layout');
 
@@ -910,6 +915,11 @@
             VehicleList,
             VehicleonTrip,
             VehicleTotal,
+            VehicleMove,
+            VehiclePosition,
+            VehicleGpsStatus,
+            VehicleMap,
+            VehicleIdle
         },
     })
     export default class App extends Vue {
@@ -946,15 +956,6 @@
 </script>
 
 <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    width: 100%;
-    height: 100%;
-  }
 
   .resizable-handle {
     position: absolute;
@@ -981,19 +982,4 @@
     height: 100%;
   }
 
-  .grid-item {
-    border: 1px dotted #000;
-  }
-
-  .vue-grid-placeholder {
-    background: #ddd;
-    border: 2px dashed #aaa;
-  }
-
-  .vue-grid-layout {
-    width: 100%;
-    display: block;
-    position: relative;
-    height: 100%;
-  }
 </style>

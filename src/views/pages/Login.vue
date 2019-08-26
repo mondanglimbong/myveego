@@ -1,5 +1,5 @@
 <template>
-  <div class="app flex-row align-items-center">
+  <div class="app flex-row align-items-center" v-bind:style="{ 'background-image': 'url(' + image + ')' }">
     <div class="container" >
       <b-row class="justify-content-center">
         <b-col md="8">
@@ -38,7 +38,7 @@
 
 <script>
     import localforage from 'localforage';
-
+    import image from '@/assets/img/wallpaper.png';
     export default {
         mounted() {
             console.log('Component mounted.')
@@ -48,12 +48,16 @@
                 token: '',
                 output: '',
                 username:'',
-                password :''
+                password :'',
+                image
             };
         },
         computed: {
             count() {
                 return store.auth.token;
+            },
+            liStyle(){
+                return "background-image : url('" + require('@/assets/img/wallpaper.png') + "')";
             }
         },
         methods: {

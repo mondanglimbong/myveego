@@ -7,7 +7,7 @@
     </div>
     <div class="text-center">
       <a id="show-btn" @click="showModal"><h1><b>25</b></h1></a>
-      <b-modal ref="my-modal" hide-footer title="Move">
+      <b-modal size="lg" ref="my-modal" hide-footer title="Move">
         <div class="d-block text-center">
           <form @submit.prevent="add">
             <b-container fluid>

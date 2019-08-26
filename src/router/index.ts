@@ -85,7 +85,7 @@ export default new Router({
           component: VehicleReport
         },
         {
-          path: 'vehicledetails',
+          path: '/vehicledetails',
           name: 'Vehicle Details',
           component: VehicleDetails
         },
