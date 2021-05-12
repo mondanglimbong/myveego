@@ -23,7 +23,7 @@
     "axios": "^0.19.0",
     "babel-jest": "^24.8.0",
     "bootstrap-vue": "^2.0.0-rc.27",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "cli-highlight": "^2.1.1",
     "css-vars-ponyfill": "^2.0.2",
     "dotenv-expand": "^5.1.0",
